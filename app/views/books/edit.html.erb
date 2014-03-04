@@ -1,4 +1,4 @@
-<%= form_for @book, url: "/books/#{@book.id}" do |f| %>
+<%= form_for @book do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>

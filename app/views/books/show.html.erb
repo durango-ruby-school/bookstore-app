@@ -1,5 +1,7 @@
 <h1><%= @book.name %></h1>
 
-<%= link_to "Edit", "/books/#{@book.id}/edit" %> | 
-<%= link_to "Delete", "/books/#{@book.id}", method: :delete, data:{confirm: "Are you sure?"} %>
+<%= link_to "Edit", edit_book_path(@book) %> | 
+<%= link_to "Delete", book_path(@book), method: :delete, data:{confirm: "Are you sure?"} %>
 <p>Pages: <%= @book.pages %></p>
+
+<%= link_to "All Books", books_path %>

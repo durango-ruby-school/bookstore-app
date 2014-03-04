@@ -1,0 +1,11 @@
+<%= form_for @book, url: "/books/#{@book.id}" do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :pages %>
+    <%= f.text_field :pages %>
+  </div>
+  <%= f.submit "Save" %>
+<% end %>

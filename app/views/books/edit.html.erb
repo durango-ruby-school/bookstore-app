@@ -1,11 +1,1 @@
-<%= form_for @book do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :pages %>
-    <%= f.text_field :pages %>
-  </div>
-  <%= f.submit "Save" %>
-<% end %>
+<%= render partial: "form" %>

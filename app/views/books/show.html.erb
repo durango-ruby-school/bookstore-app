@@ -5,4 +5,15 @@
 <p>Pages: <%= @book.pages %></p>
 <p><%= simple_format @book.summary %></p>
 
+<h2>Reviews</h2>
+
+<% @reviews.each do |review| %>
+<div>
+  <%= simple_format review.body %>
+  <%= link_to [@book, review] do %>
+    <p style="font-style: italic"><%= review.name %> gave this book a <%= review.rating %> star rating.</p>
+  <% end %>
+</div>
+<% end %>
+
 <%= link_to "All Books", books_path %>

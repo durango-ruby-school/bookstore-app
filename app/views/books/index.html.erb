@@ -6,11 +6,13 @@
   <tr>
     <th>Name</th>
     <th>Pages</th>
+    <th>Review Count</th>
   </tr>
   <% @books.each do |book| %>
   <tr>
     <td><%= link_to book.name, book %></td>
     <td><%= book.pages %></td>
+    <td><%= book.reviews.count %></td>
   </tr>
   <% end %>
 </table>

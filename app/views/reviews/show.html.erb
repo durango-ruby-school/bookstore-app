@@ -1,0 +1,5 @@
+<h1>Review #<%= @review.id %> for <%= link_to @book.name, @book %></h1>
+
+<p><%= @review.name %> gave this book <%= @review.rating %> stars</p>
+
+<%= simple_format @review.body %>

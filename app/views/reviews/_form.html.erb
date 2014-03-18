@@ -1,6 +1,6 @@
 <%= simple_form_for [@book, @review] do |f| %>
   <%= f.input :name %>
-  <%= f.input :rating %>
+  <%= f.input :rating, as: :select, collection: 1..5 %>
   <%= f.input :body %>
 
   <%= f.submit class: "btn btn-primary" %>

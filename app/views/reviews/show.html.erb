@@ -1,5 +1,8 @@
 <h1>Review #<%= @review.id %> for <%= link_to @book.name, @book %></h1>
 
+<%= link_to "Edit", edit_book_review_path(@book, @review) %> | 
+<%= link_to "Delete", [@book, @review], method: :delete, data: {confirm: "Are you sure?"} %>
+
 <p><%= @review.name %> gave this book <%= @review.rating %> stars</p>
 
 <%= simple_format @review.body %>

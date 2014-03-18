@@ -15,6 +15,22 @@ class ReviewsController < ApplicationController
     redirect_to [@book, @review]
   end
   
+  def edit
+    @review = @book.reviews.find params[:id]
+  end
+  
+  def update
+    @review = @book.reviews.find params[:id]
+    @review.update_attributes params[:review]
+    redirect_to [@book, @review]
+  end
+  
+  def destroy
+    @review = @book.reviews.find params[:id]
+    @review.destroy
+    redirect_to @book
+  end
+  
   private
   
   def find_book

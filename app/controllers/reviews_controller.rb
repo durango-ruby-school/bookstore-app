@@ -11,8 +11,11 @@ class ReviewsController < ApplicationController
   
   def create
     @review = @book.reviews.new params[:review]
-    @review.save
-    redirect_to [@book, @review]
+    if @review.save
+      redirect_to [@book, @review]
+    else
+      render "new"
+    end
   end
   
   def edit
@@ -21,8 +24,11 @@ class ReviewsController < ApplicationController
   
   def update
     @review = @book.reviews.find params[:id]
-    @review.update_attributes params[:review]
-    redirect_to [@book, @review]
+    if @review.update_attributes params[:review]
+      redirect_to [@book, @review]
+    else
+      render "edit"
+    end
   end
   
   def destroy

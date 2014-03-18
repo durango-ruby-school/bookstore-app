@@ -1,4 +1,15 @@
 <%= form_for @book do |f| %>
+  <% if @book.errors.any? %>
+    <div class="errors">
+      This form contains errors:
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
